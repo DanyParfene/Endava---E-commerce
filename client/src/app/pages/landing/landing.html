@@ -1,14 +1,8 @@
-<div class="bg-primary-dark">
-    <header>
-        <app-header class="sticky top-0 z-10"/>
-    </header>
-    <div class="flex flex-row">
-        <aside class="sticky top-[72px] h-[calc(100vh-72px)] overflow-auto">
-            <app-sidebar/>
-        </aside>
-        <main class="flex-1 px-4 py-6">
-            <app-product-wrapper/>
-        </main>
-    </div>
+<div class="flex flex-row">
+  <aside class="sticky top-[72px] h-[calc(100vh-72px)] overflow-auto">
+    <app-sidebar />
+  </aside>
+  <main class="px-4 py-6 flex flex-col flex-1 items-center justify-center">
+    <app-product-wrapper />
+  </main>
 </div>
-
