@@ -1,0 +1,10 @@
+<div class="w-fit overflow-hidden rounded-lg bg-blue-50 m-5 shadow hover:shadow-lg duration-500">
+  <img [src]="imageUrl()" class="md:max-w-[40vw] sm:w-[90vw]" />
+  <div class="p-5 flex flex-col">
+    <div class="font-bold text-xl mb-1">{{ name() }}</div>
+    <div class="w-full flex justify-between">
+      <div>{{ price() }} lei</div>
+      <app-action-button />
+    </div>
+  </div>
+</div>
