@@ -1,3 +1,8 @@
-<button (click)="handleAction()" class="bg-transparent border border-2 border-secondary-light py-1 px-3 rounded-xl hover:bg-secondary-light hover:shadow-sm duration-200 cursor-pointer">
-    <img [src]="imageUrl()" class="w-7 h-7" />
+<button (click)="handleAction()" class="bg-transparent border border-2 border-secondary-light py-1 px-3 rounded-xl hover:bg-secondary-light hover:shadow-sm duration-200 cursor-pointer h-fit">
+    @if (imageUrl()) {
+        <img [src]="imageUrl()" class="w-7 h-7" />
+    } 
+    @if (buttonText()) {
+        {{buttonText()}}
+    }
 </button>

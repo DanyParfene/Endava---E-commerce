@@ -7,10 +7,11 @@ import { Sidebar } from './components/sidebar/sidebar';
 import { SidebarCategory } from './components/sidebar-category/sidebar-category';
 import { ProductWrapper } from './components/product-wrapper/product-wrapper';
 import { Product } from './models/product.model';
+import { AccountForm } from './components/account-form/account-form';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, RedirectButton, ProductCard, Sidebar, SidebarCategory, ProductWrapper],
+  imports: [RouterOutlet, Header, RedirectButton, ProductCard, Sidebar, SidebarCategory, ProductWrapper, AccountForm],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

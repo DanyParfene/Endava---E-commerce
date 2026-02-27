@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, input, linkedSignal, output, } from '@angular/core';
 
 @Component({
   selector: 'app-action-button',
@@ -7,9 +7,16 @@ import { Component, signal } from '@angular/core';
   styleUrl: './action-button.css',
 })
 export class ActionButton {
-  imageUrl = signal('assets/add.svg');
+  url = input<string>();
+  text = input<string>("Click");
+
+  imageUrl = linkedSignal(() => this.url());
+  buttonText = linkedSignal(() => this.text());
+  
+  buttonClick = output<void>();
   
   handleAction() {
-    console.log("Added to cart");
+    console.log(this.text());
+    this.buttonClick.emit();
   }
 }
