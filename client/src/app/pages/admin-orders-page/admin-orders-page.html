@@ -1,0 +1,15 @@
+<main class="px-4 py-6 flex flex-col flex-1 items-center justify-center h-[80vh] text-white">
+  <div class="font-bold text-2xl w-full">Order history</div>
+  <div class="w-full max-w-[800px] flex flex-col gap-10 py-10 min-h-[80vh]">
+    @for (o of orders; track o.name; let i = $index) {
+      <app-order-card
+        [name]="o.name"
+        [email]="o.email"
+        [address]="o.address"
+        [number]="i"
+        [date]="o.date"
+        [id]="o.id"
+      />
+    }
+  </div>
+</main>
