@@ -9,6 +9,8 @@ import { CategoryPage } from './pages/category-page/category-page';
 import { AccountPage } from './pages/account-page/account-page';
 import { OrderPage } from './pages/order-page/order-page';
 import { FavoritesPage } from './pages/favorites-page/favorites-page';
+import { PlaceOrderPage } from './pages/place-order-page/place-order-page';
+import { ShoppingCartPage } from './pages/shopping-cart-page/shopping-cart-page';
 
 export const routes: Routes = [
   { path: '', component: Landing },
@@ -35,4 +37,6 @@ export const routes: Routes = [
       },
     ],
   },
+  { path: 'place-order', component: PlaceOrderPage},
+  { path: 'shopping-cart', component: ShoppingCartPage},
 ];
