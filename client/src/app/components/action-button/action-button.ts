@@ -8,7 +8,7 @@ import { Component, input, linkedSignal, output, } from '@angular/core';
 })
 export class ActionButton {
   url = input<string>();
-  text = input<string>("Click");
+  text = input<string>();
 
   imageUrl = linkedSignal(() => this.url());
   buttonText = linkedSignal(() => this.text());

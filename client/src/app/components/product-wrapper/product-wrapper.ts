@@ -9,6 +9,7 @@ import { Product } from '../../models/product.model';
   styleUrl: './product-wrapper.css',
 })
 export class ProductWrapper {
+  category = input<string>('all');
   products = input<Product[]>([
     { name: 'Apple', imageUrl: 'assets/apple.png', price: 5 },
     { name: 'Orange', imageUrl: 'assets/orange.png', price: 9 },

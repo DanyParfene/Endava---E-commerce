@@ -1,5 +1,8 @@
 <div class="flex flex-row flex-wrap justify-center">
-    @for (p of products(); track p.name) {
-        <app-product-card [name]="p.name" [imageUrl]="p.imageUrl" [price]="p.price" />
-    }
+  @if (category() !== 'all') {
+    <h1 class="text-white font-bold capitalize text-3xl w-full mb-4">{{ category() }}</h1>
+  }
+  @for (p of products(); track p.name) {
+    <app-product-card [name]="p.name" [imageUrl]="p.imageUrl" [price]="p.price" />
+  }
 </div>

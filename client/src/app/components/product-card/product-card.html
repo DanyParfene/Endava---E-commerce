@@ -1,10 +1,15 @@
-<div class="w-[280px] overflow-hidden rounded-lg bg-primary-light m-5 shadow hover:shadow-lg duration-500 cursor-pointer">
-  <img [src]="imageUrl()" class="w-full h-[220px] object-cover" />
+<div
+  class="group w-[280px] overflow-hidden rounded-xl bg-primary-light m-5 shadow hover:shadow-lg duration-500 cursor-pointer hover:shadow-lg hover:shadow-white/30"
+>
+  <div class="relative">
+    <img [src]="imageUrl()" class="w-full h-[220px] object-cover" />
+    <app-action-button class="opacity-0 group-hover:opacity-100 duration-200 absolute top-2 right-2" [url]="'assets/favorite.svg'" />
+  </div>
   <div class="p-5 flex flex-col">
     <div class="font-bold text-xl mb-1 text-text-primary">{{ name() }}</div>
     <div class="w-full flex justify-between text-text-primary">
       <div>{{ price() }} lei</div>
-      <app-action-button />
+      <app-action-button [url]="'assets/shopping_cart.svg'" />
     </div>
   </div>
 </div>
