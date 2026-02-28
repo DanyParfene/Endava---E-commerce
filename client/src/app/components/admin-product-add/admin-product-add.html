@@ -1,14 +1,21 @@
-<div [formGroup]="productForm" class="max-w-6xl mx-auto p-6 bg-primary-dark rounded-2xl shadow-xl flex flex-col md:flex-row gap-8 shadow-lg shadow-white/20">
+<div [formGroup]="productForm" class="max-w-6xl mx-auto p-6 bg-primary-dark rounded-2xl flex flex-col md:flex-row gap-8 shadow-lg shadow-white/20">
   
   <div class="w-full md:w-1/2 flex flex-col gap-4">
-    <div class="w-full h-[400px] bg-primary-light rounded-xl border-2 border-dashed border-secondary-light flex items-center justify-center overflow-hidden">
+    <label class="relative w-full h-[400px] bg-primary-light rounded-xl border-2 border-dashed border-secondary-light flex items-center justify-center overflow-hidden cursor-pointer hover:bg-primary-light/80 duration-200">
+      
+      <input type="file" (change)="onFileSelected($event)" class="hidden" accept="image/*" />
+
       @if (productForm.value.imageUrl) {
         <img [src]="productForm.value.imageUrl" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 flex items-center justify-center duration-200 text-white font-bold">
+            Change Image
+        </div>
       } @else {
-        <span class="text-text-primary opacity-50">Image Preview</span>
+        <span class="text-text-primary opacity-50 font-bold">Click to Select Image</span>
       }
-    </div>
-    <input formControlName="imageUrl" placeholder="Image URL (assets/filename.jpg)" 
+    </label>
+
+    <input formControlName="imageUrl" placeholder="Image URL" 
            class="w-full bg-primary-light border border-primary-light p-3 rounded-lg text-text-primary focus:outline-none focus:border-secondary-light" />
   </div>
 
