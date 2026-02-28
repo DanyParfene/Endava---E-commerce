@@ -1,0 +1,65 @@
+<main class="px-4 py-6 flex flex-col flex-1 items-center justify-center">
+  <div class="w-full">
+    <app-redirect-button [route]="'products'" [imageUrl]="'assets/arrow_back.svg'" />
+  </div>
+  <div
+    class="duration-300 shadow-md mt-4 hover:shadow-lg shadow-white/30 rounded-lg flex flex-col w-full px-10 py-8 gap-2 text-white"
+  >
+    <div class="flex flex-col gap-2 cursor-pointer flex-1">
+      <div class="flex flex-row justify-between items-center w-full flex-1">
+        <div class="text-white font-bold text-3xl">Order #{{ id() }}</div>
+        <div class="text-gray-300 flex flex-row gap-2">
+          {{ date() }}
+          <img src="assets/calendar.svg" class="h-6" />
+        </div>
+      </div>
+      <div class="flex flex-row gap-2">
+        <img src="assets/account_circle.svg" class="h-6" />{{ name() }}
+      </div>
+      <div class="flex flex-row gap-2">
+        <img src="assets/at_sign.svg" class="h-6" />{{ email() }}
+      </div>
+      <div class="flex flex-row gap-2">
+        <img src="assets/location.svg" class="h-6" />{{ address() }}
+      </div>
+    </div>
+    <hr class="text-gray-700 m-4 w-full" />
+    <div class="text-white font-bold text-2xl">Status</div>
+    <label>
+      <input type="radio" name="options" value="pending" [(ngModel)]="selectedOption" />
+      Pending
+    </label>
+    <label>
+      <input type="radio" name="options" value="in-transit" [(ngModel)]="selectedOption" />
+      In transit
+    </label>
+    <label>
+      <input type="radio" name="options" value="delivered" [(ngModel)]="selectedOption" />
+      Delivered
+    </label>
+    <label>
+      <input type="radio" name="options" value="rejected" [(ngModel)]="selectedOption" />
+      Rejected
+    </label>
+    <hr class="text-gray-700 m-4 w-full" />
+    <div class="text-white font-bold text-2xl">Products</div>
+    <div class="flex flex-wrap">
+      @for (p of products(); track p.id) {
+        <div
+          class="group w-[280px] overflow-hidden rounded-xl bg-primary-light m-5 shadow hover:shadow-lg duration-500 cursor-pointer hover:shadow-lg hover:shadow-white/30"
+        >
+          <img [src]="p.imageUrl" class="w-full h-[220px] object-cover" />
+          <div class="p-5 flex flex-col">
+            <div class="font-bold text-xl mb-1 text-text-primary">{{ p.name }}</div>
+            <div class="w-full flex justify-between text-text-primary">
+              <div>{{ p.price }} lei</div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+    <div class="w-full flex justify-center">
+      <app-action-button [text]="'Save'"/>
+    </div>
+  </div>
+</main>
