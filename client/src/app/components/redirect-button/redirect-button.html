@@ -1,10 +1,11 @@
-<a [routerLink]="route()" class="flex items-center justify-center
-         w-12 h-12
-         m-2
-         rounded-xl
-         bg-transparent
-         border border-2 border-secondary-light
-         hover:bg-secondary-light
-         hover:shadow-sm duration-200">
-    <img [src]="imageUrl()" class="w-7 h-7" alt="Button">
+<a
+  [routerLink]="route()"
+  class="flex items-center justify-center w-fit p-2 m-2 rounded-xl bg-transparent border border-2 border-secondary-light hover:bg-secondary-light hover:shadow-sm duration-200"
+>
+  @if (imageUrl()) {
+    <img [src]="imageUrl()" class="w-7 h-7" alt="Button" />
+  }
+  @if (text()) {
+    {{ text() }}
+  }
 </a>

@@ -9,3 +9,25 @@
     --color-secondary-dark: #CA6702;
     --color-text-primary: #FAF9F6;
 }
+
+@layer base {
+    ::-webkit-scrollbar {
+        @apply w-2 h-2;
+    }    
+
+    ::-webkit-scrollbar-track {
+        @apply bg-transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-primary-light;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        @apply bg-primary-light/80;
+    }
+
+    ::-webkit-scrollbar-thumb:active {
+        @apply bg-primary-light/60;
+    }
+}

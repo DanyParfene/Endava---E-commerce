@@ -1,0 +1,23 @@
+<div
+  class="shadow-md hover:shadow-lg shadow-white/30 rounded-lg flex flex-row w-full px-10 py-8 gap-2 "
+>
+  <div class="flex flex-col gap-2 cursor-pointer flex-1">
+    <div class="mb-2 text-xl font-bold">Order #{{ number() }}</div>
+    <div class="flex flex-row gap-2">
+      <img src="assets/account_circle.svg" class="h-6" />{{ name() }}
+    </div>
+    <div class="flex flex-row gap-2"><img src="assets/at_sign.svg" class="h-6" />{{ email() }}</div>
+    <div class="flex flex-row gap-2">
+      <img src="assets/location.svg" class="h-6" />{{ address() }}
+    </div>
+  </div>
+  <div class="flex flex-col justify-between items-end w-full flex-1">
+      <div class="text-gray-300 flex flex-row gap-2">
+          <div class="">
+              {{ date() }}
+            </div>
+            <img src="assets/calendar.svg" class="h-6" />
+        </div>
+        <app-redirect-button [text]="'View more'" [route]="'order/${id()}'"/>
+    </div>
+</div>
