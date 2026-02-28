@@ -1,0 +1,61 @@
+<div class="w-full bg-primary-dark p-4 sm:p-6 md:p-12 flex flex-col items-center">
+  
+  <div class="w-full max-w-6xl flex flex-col sm:flex-row justify-between items-center mb-8 sm:mb-12 border-b border-primary-light pb-6 gap-6">
+    <div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+      <div class="w-12 h-12 bg-secondary-light rounded-full flex shrink-0 items-center justify-center">
+        <img src="assets/admin_panel_settings.svg" class="w-7 h-7" alt="Admin" />
+      </div>
+      <div class="min-w-0">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-text-primary break-words">Admin Dashboard</h1>
+        <p class="text-secondary-light font-bold uppercase tracking-widest text-xs sm:text-sm">Control Panel</p>
+      </div>
+    </div>
+    
+    <div class="text-white shrink-0">
+      <app-action-button 
+        text="Log Out" 
+        url="assets/logout.svg" 
+        (buttonClick)="logout()" />
+    </div>
+  </div>
+
+  <div class="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+    
+    <div class="bg-primary-light border border-primary-light rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center shadow-lg shadow-white/5 hover:border-secondary-light duration-300">
+      <div class="w-16 h-16 bg-primary-dark rounded-full flex shrink-0 items-center justify-center mb-6 border border-primary-light">
+        <img src="assets/add_circle.svg" class="w-8 h-8" />
+      </div>
+      <h2 class="text-lg sm:text-xl font-bold text-text-primary mb-2">New Product</h2>
+      <p class="text-text-primary opacity-70 text-xs sm:text-sm mb-6">Add items to your store</p>
+      <app-redirect-button text="Add" url="assets/add_circle.svg" route="/" class="w-full text-white flex justify-center" />
+    </div>
+
+    <div class="bg-primary-light border border-primary-light rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center shadow-lg shadow-white/5 hover:border-secondary-light duration-300">
+      <div class="w-16 h-16 bg-primary-dark rounded-full flex shrink-0 items-center justify-center mb-6 border border-primary-light">
+        <img src="assets/inventory.svg" class="w-8 h-8" />
+      </div>
+      <h2 class="text-lg sm:text-xl font-bold text-text-primary mb-2">Inventory</h2>
+      <p class="text-text-primary opacity-70 text-xs sm:text-sm mb-6">Manage existing products</p>
+      <app-redirect-button text="View" url="assets/inventory.svg" route="/" class="w-full text-white flex justify-center" />
+    </div>
+
+    <div class="bg-primary-light border border-primary-light rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center shadow-lg shadow-white/5 hover:border-secondary-light duration-300">
+      <div class="w-16 h-16 bg-primary-dark rounded-full flex shrink-0 items-center justify-center mb-6 border border-primary-light">
+        <img src="assets/orders.svg" class="w-8 h-8" />
+      </div>
+      <h2 class="text-lg sm:text-xl font-bold text-text-primary mb-2">Orders</h2>
+      <p class="text-text-primary opacity-70 text-xs sm:text-sm mb-6">Process customer purchases</p>
+      <app-redirect-button text="Orders" url="assets/orders.svg" route="/" class="w-full text-white flex justify-center" />
+    </div>
+
+    <div class="bg-primary-light border border-primary-light rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center shadow-lg shadow-white/5 hover:border-secondary-light duration-300">
+      <div class="w-16 h-16 bg-primary-dark rounded-full flex shrink-0 items-center justify-center mb-6 border border-primary-light">
+        <img src="assets/analytics.svg" class="w-8 h-8" />
+      </div>
+      <h2 class="text-lg sm:text-xl font-bold text-text-primary mb-2">Analytics</h2>
+      <p class="text-text-primary opacity-70 text-xs sm:text-sm mb-6">View store performance</p>
+      <app-redirect-button text="Analytics" url="assets/analytics.svg" route="/" class="w-full text-white flex justify-center" />
+    </div>
+
+  </div>
+</div>
