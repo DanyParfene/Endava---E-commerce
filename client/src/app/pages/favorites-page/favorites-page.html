@@ -1,0 +1,10 @@
+<main class="px-4 py-6 flex flex-col flex-1 items-center justify-center">
+  <div class="text-white font-bold text-3xl w-full px-16">Favorites</div>
+  @if (favorites.length > 0) {
+    <app-product-wrapper [products]="favorites" />
+  } @else {
+    <div class="text-white h-[80vh] w-full flex items-center justify-center text-xl">
+      You have no products saved in favorites.
+    </div>
+  }
+</main>
