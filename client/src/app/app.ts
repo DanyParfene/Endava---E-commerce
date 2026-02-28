@@ -8,10 +8,12 @@ import { SidebarCategory } from './components/sidebar-category/sidebar-category'
 import { ProductWrapper } from './components/product-wrapper/product-wrapper';
 import { Product } from './models/product.model';
 import { AccountForm } from './components/account-form/account-form';
+import { OrderForm } from './components/order-form/order-form';
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, RedirectButton, ProductCard, Sidebar, SidebarCategory, ProductWrapper, AccountForm],
+  imports: [RouterOutlet, Header, RedirectButton, ProductCard, Sidebar, SidebarCategory, ProductWrapper, AccountForm, OrderForm],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
