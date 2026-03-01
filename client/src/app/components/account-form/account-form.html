@@ -1,0 +1,33 @@
+<form
+  [formGroup]="accountForm"
+  (ngSubmit)="submitAction()"
+  class="bg-primary-dark text-white px-13 py-7 w-[clamp(500px,80vw,1000px)] flex flex-col justify-center align-center items-center shadow-lg shadow-white/20"
+>
+  <div class="text-2xl mb-4 font-bold w-full max-w-[600px]">
+    {{ formMode() ? 'Login' : 'Register' }}
+  </div>
+  <div class="flex flex-col w-full max-w-[600px] mb-4">
+    <label class="font-heavy text-lg">Email</label>
+    <input
+      formControlName="email"
+      class="border border-2 duration-200 border-secondary-light rounded-xl hover:shadow shadow-primary-light p-2 px-4 bg-primary-dark text-white w-full-safe focus:outline-none focus:border-white"
+    />
+  </div>
+  <div class="flex flex-col w-full max-w-[600px] mb-4">
+    <label class="font-heavy text-lg">Password</label>
+    <input
+      formControlName="password"
+      class="border border-2 duration-200 border-secondary-light rounded-xl hover:shadow shadow-primary-light p-2 px-4 bg-primary-dark text-white w-full-safe focus:outline-none focus:border-white"
+    />
+  </div>
+  @if (!formMode()) {
+    <div class="flex flex-col w-full max-w-[600px] mb-4">
+      <label class="font-heavy text-lg">Confirm Password</label>
+      <input
+        formControlName="confirmPassword"
+        class="border border-2 duration-200 border-secondary-light rounded-xl hover:shadow shadow-primary-light p-2 px-4 bg-primary-dark text-white w-full-safe focus:outline-none focus:border-white"
+      />
+    </div>
+  }
+  <app-action-button [text]="formMode() ? 'Login' : 'Register'"/>
+</form>

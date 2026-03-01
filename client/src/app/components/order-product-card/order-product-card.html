@@ -1,0 +1,17 @@
+<div class="w-[70vw] max-w-[1400px] max-w-[1400px] mx-auto p-6 bg-primary-dark rounded-2xl flex items-center justify-between flex-wrap gap-8 shadow-lg shadow-white/20">
+
+  <img [src]="imageUrl()" [alt]="name()" class="w-48 h-48 rounded-xl shadow-lg"/>
+  <h1 class="text-4xl font-black text-text-primary">{{ name() }}</h1>
+  <div class="text-4xl font-black text-secondary-light">{{ totalPrice() }} lei
+  </div>
+    <div class="w-fit flex flex-row items-center justify-center p-5 gap-4">
+      <div class="flex flex-row items-center border-2 border-secondary-light rounded-xl overflow-hidden">
+        <button (click)="decrement()" class="w-10 h-10 flex items-center justify-center text-text-primary hover:bg-secondary-light hover:text-primary-dark duration-200 font-black cursor-pointer">-</button>
+        <span class="px-6 text-text-primary font-bold min-w-[50px] text-center">{{ quantity() }}</span>
+        <button (click)="increment()" class="w-10 h-10 flex items-center justify-center text-text-primary hover:bg-secondary-light hover:text-primary-dark duration-200 font-black cursor-pointer">+</button>
+      </div>
+      <div>
+          <app-action-button text="" url="assets/delete.svg" (buttonClick)="handleOnDelete()"/>
+      </div>
+    </div>
+</div>

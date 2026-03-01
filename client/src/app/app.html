@@ -1,5 +1,6 @@
-<app-header/>
-<app-product-card name="Apple" imageUrl="assets/apple.png" [price]=5/>
-<app-product-card name="Orange" imageUrl="assets/orange.png" [price]=9/>
-<app-product-card name="Grapes" imageUrl="assets/grapes.png" [price]=23/>
-<router-outlet/>
+<div class="bg-primary-dark h-screen flex flex-col overflow-y-auto">
+    <header>
+        <app-header/>
+    </header>
+    <router-outlet />
+</div>

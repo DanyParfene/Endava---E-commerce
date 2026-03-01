@@ -1,0 +1,51 @@
+<form
+    [formGroup]="orderForm"
+    (ngSubmit)="submitAction()"
+    class="bg-primary-dark text-white px-13 py-7 w-[clamp(500px,80vw,100px)] flex flex-col justify-center align-center shadow-lg shadow-white/20 rounded-xl"
+>
+    <div class="text-2xl mb-4 font-bold w-full max-w-[600px]">
+        Order Information
+    </div>
+    <div class="flex flex-col w-full max-w-[600px] mb-4">
+        <label class="font heavy text-lg">Name</label>
+        <input 
+            formControlName="name"
+            class="border border-2 duration-200 border-secondary-light rounded-xl hover:shadow shadow-primary-light p-2 px-4 bg-primary-dark text-white w-full-safe focus:outline-none focus:border-white"
+        />
+    </div>
+    <div class="flex flex-col w-full max-w-[600px] mb-4">
+        <label class="font-heavy text-lg">Email</label>
+        <input
+            formControlName="email"
+            class="border border-2 duration-200 border-secondary-light rounded-xl hover:shadow shadow-primary-light p-2 px-4 bg-primary-dark text-white w-full-safe focus:outline-none focus:border-white"
+        />
+    </div>
+    <div class="flex flex-col w-full max-w-[600px] mb-4">
+        <label class="font-heavy text-lg">Adress</label>
+        <input
+            formControlAdress="adress"
+            class="border border-2 duration-200 border-secondary-light rounded-xl hover:shadow shadow-primary-light p-2 px-4 bg-primary-dark text-white w-full-safe focus:outline-none focus:border-white"
+        />
+    </div>
+    <div class="flex flex-col w-full max-w-[600px] mb-4">
+        <label class="font-heavy text-lg">Phone</label>
+        <input
+            formControlPhone="phone"
+            class="border border-2 duration-200 border-secondary-light rounded-xl hover:shadow shadow-primary-light p-2 px-4 bg-primary-dark text-white w-full-safe focus:outline-none focus:border-white"
+        />
+    </div>
+    <div class="flex flex-col w-full max-w-[600px] mb-4">
+        <p class="font-heavy text-lg mb-2">Payment Method</p>
+        <label class="font-heavy text-lg flex flex-row items-center">
+            <input type="radio" name="payment" class="cursor-pointer w-4 h-4 accent-secondary-light transition hover:scale-110 duration-200">
+            <span class="px-2">At Delivery</span>
+        </label>
+        <label class="font-heavy text-lg mb-2 flex flex-row items-center">
+            <input type="radio" name="payment" class="cursor-pointer w-4 h-4 accent-secondary-light transition hover:scale-110 duration-200">
+            <span class="px-2">Online</span>
+        </label>
+    </div>
+    <div class="flex flex-row justify-center">
+        <app-action-button [text]="'Place Order'"/>
+    </div>
+</form>

@@ -9,5 +9,6 @@ import { RouterLink } from '@angular/router';
 })
 export class RedirectButton {
   route = input.required<string>();
-  imageUrl = input.required<string>();
+  imageUrl = input<string>();
+  text = input<string>();
 }

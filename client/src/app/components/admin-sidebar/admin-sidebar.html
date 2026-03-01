@@ -1,0 +1,40 @@
+<div class="bg-primary-dark flex flex-col items-center w-[90vw] md:max-w-[20vw] px-2 py-5 m-5 rounded relative min-h-[60vh] pb-16">
+  
+  <div class="w-full flex flex-col gap-2">
+    @for (cat of categories(); track cat.id) {
+      @if (!isEditMode()) {
+        <app-sidebar-category [route]="cat.route" [category]="cat.name" class="w-full" /> 
+      } @else {
+        <div class="flex w-full gap-2 items-center">
+          <input 
+            [ngModel]="cat.name" 
+            (ngModelChange)="updateCategory(cat.id, $event)"
+            class="w-full bg-primary-light border border-secondary-light text-text-primary px-4 py-2 rounded focus:outline-none" 
+          />
+          <button (click)="deleteCategory(cat.id)" class="hover:bg-secondary-light p-2 rounded duration-200 shrink-0 cursor-pointer">
+            <img src="assets/delete.svg" class="w-5 h-5 brightness-0 invert" alt="Delete" />
+          </button>
+        </div>
+      }
+    }
+
+    @if (isEditMode()) {
+      <button 
+        (click)="addCategory()" 
+        class="w-full mt-2 bg-transparent hover:bg-secondary-light/10 text-secondary-light border border-dashed border-secondary-light py-2 rounded font-bold duration-200 flex justify-center items-center gap-2 cursor-pointer">
+        <img src="assets/add_circle.svg" class="w-5 h-5 brightness-0 invert" alt="Add" /> Add Category
+      </button>
+    }
+  </div>
+
+  <button 
+    (click)="toggleEditMode()" 
+    class="absolute bottom-4 right-4 w-10 h-10 bg-secondary-light rounded-full flex items-center justify-center hover:bg-secondary-dark duration-200 cursor-pointer shadow-lg">
+    @if (isEditMode()) {
+      <img src="assets/save.svg" class="w-5 h-5 brightness-0 invert" alt="Save" />
+    } @else {
+      <img src="assets/edit.svg" class="w-5 h-5 brightness-0 invert" alt="Edit" />
+    }
+  </button>
+  
+</div>
