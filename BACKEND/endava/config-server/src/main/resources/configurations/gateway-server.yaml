@@ -1,0 +1,25 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: ${}
+          uri: lb://
+          predicates:
+            - Path=/api/
+
+      globalcors:
+        cors-configurations:
+          "[/**]":
+            allowed-origins:
+              - ${DEVELOPMENT_ORIGIN}
+            allowed-methods:
+              - GET
+              - POST
+              - DELETE
+              - PUT
+              - PATCH
+              - OPTIONS
+            allowed-headers:
+              - "Authorization"
+              - "Content-Type"
+            allowed-credentials: true

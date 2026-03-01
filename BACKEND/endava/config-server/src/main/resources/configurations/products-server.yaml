@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: ${PRODUCTS_DATABASE_URL}
+    username: ${PRODUCTS_DATABASE_USERNAME}
+    password: ${PRODUCTS_DATABASE_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true

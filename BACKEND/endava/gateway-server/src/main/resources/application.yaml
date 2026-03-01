@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: ${GATEWAY_SERVER_NAME}
+  config:
+    import: configserver:http://${CONFIG_SERVER_NAME}:8888

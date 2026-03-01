@@ -1,0 +1,2 @@
+ro.ddrm.shared.redis.RedisAutoConfiguration
+ro.ddrm.shared.token.TokenAutoConfiguration

@@ -1,0 +1,11 @@
+CREATE TABLE users (
+    id VARCHAR(36) PRIMARY KEY DEFAULT gen_random_uuid()::text,
+    email VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(60) NOT NULL,
+    verified BOOLEAN NOT NULL DEFAULT FALSE,
+    role VARCHAR(10) NOT NULL DEFAULT 'USER' CHECK (role in ('USER', 'ADMIN')),
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX users_email_idx ON users(email);

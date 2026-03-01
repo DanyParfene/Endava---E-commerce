@@ -1,0 +1,18 @@
+CREATE TABLE products (
+    id VARCHAR(36) PRIMARY KEY DEFAULT gen_random_uuid()::text,
+    title VARCHAR(100) NOT NULL,
+    description VARCHAR(1000) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL DEFAULT 0,
+    image VARCHAR(256) NOT NULL,
+    quantity INT NOT NULL DEFAULT 0 CHECK (quantity >= 0),
+    category_id VARCHAR(36) NOT NULL REFERENCES categories(id),
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE categories (
+    id VARCHAR(36) PRIMARY KEY DEFAULT gen_random_uuid()::text,
+    name VARCHAR(30) NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

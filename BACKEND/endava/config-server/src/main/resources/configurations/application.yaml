@@ -1,0 +1,18 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${DISCOVERY_SERVER_NAME}:8761/eureka/
+
+jwt:
+  secret-key: ${JWT_SECRET_KEY}
+  access-token-expiry: ${JWT_ACCESS_TOKEN_EXPIRY}
+  refresh-token-expiry: ${JWT_REFRESH_TOKEN_EXPIRY}
+
+spring:
+  data:
+    redis:
+      host: ${REDIS_SERVER_NAME}
+      port: 6379
+
+redis:
+  enabled: false
